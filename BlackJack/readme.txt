@@ -1,0 +1,4 @@
+1. On the address bar of the file explorer, where you have saved your files, type and press enter: cmd.
+2. On cmd, type and press enter: chcp 65001
+3. If you want to compile the program with mingw, type and enter: gcc main.c -o main -lwinmm. where main is name of your C file.
+4. On the same cmd, type and press enter: main [or the name of your file], to start the program.
