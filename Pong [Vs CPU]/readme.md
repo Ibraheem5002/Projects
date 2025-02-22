@@ -41,7 +41,8 @@ This is a classic *Pong game* built using **C++** and the **Raylib** graphics li
 - *Adjust Frames Per Second (FPS):* `SetTargetFPS(60);`
 
 ## 📸
-![Image of the page](image.png)
+![image](https://github.com/user-attachments/assets/5bb026ea-d8e6-4b11-bd0e-4d4a5197f0b8)
+
 
 
 ## 📜 *License*
