@@ -34,6 +34,10 @@ You can modify the game via the C++ source code located in the `src` subfolder.
 ## License 📜
 This project is open-source. Feel free to modify and share!
 
+## Screenshots 📸
+![Screenshot 2025-03-01 133040](https://github.com/user-attachments/assets/762e6fa3-8599-4152-bdef-986d0402cd03)
+![Screenshot 2025-03-01 133048](https://github.com/user-attachments/assets/ed7f398e-c67b-4874-9b34-7ce3ace0f42b)
+
 ---
 Enjoy the game! 🎉🔥 🏓
 
