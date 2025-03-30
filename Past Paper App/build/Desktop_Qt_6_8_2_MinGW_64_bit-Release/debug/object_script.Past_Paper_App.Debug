@@ -1,0 +1,10 @@
+debug/admin_screen.o
+debug/authentication.o
+debug/main.o
+debug/selection.o
+debug/user_screen.o
+debug/qrc_Resource_File.o
+debug/moc_admin_screen.o
+debug/moc_authentication.o
+debug/moc_selection.o
+debug/moc_user_screen.o
