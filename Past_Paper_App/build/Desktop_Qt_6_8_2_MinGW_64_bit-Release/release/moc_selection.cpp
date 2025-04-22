@@ -44,6 +44,7 @@ static constexpr auto qt_meta_stringdata_ZN9SelectionE = QtMocHelpers::stringDat
     "on_Admin_Button_clicked",
     "on_User_Button_clicked",
     "on_Exit_clicked",
+    "on_Ibrahim_Button_clicked",
     "show_window",
     "Lock_Admin_Button"
 );
@@ -57,7 +58,7 @@ Q_CONSTINIT static const uint qt_meta_data_ZN9SelectionE[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-       7,   14, // methods
+       8,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -65,21 +66,23 @@ Q_CONSTINIT static const uint qt_meta_data_ZN9SelectionE[] = {
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   56,    2, 0x06,    1 /* Public */,
-       3,    0,   57,    2, 0x06,    2 /* Public */,
+       1,    0,   62,    2, 0x06,    1 /* Public */,
+       3,    0,   63,    2, 0x06,    2 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       4,    0,   58,    2, 0x08,    3 /* Private */,
-       5,    0,   59,    2, 0x08,    4 /* Private */,
-       6,    0,   60,    2, 0x08,    5 /* Private */,
-       7,    0,   61,    2, 0x0a,    6 /* Public */,
-       8,    0,   62,    2, 0x0a,    7 /* Public */,
+       4,    0,   64,    2, 0x08,    3 /* Private */,
+       5,    0,   65,    2, 0x08,    4 /* Private */,
+       6,    0,   66,    2, 0x08,    5 /* Private */,
+       7,    0,   67,    2, 0x08,    6 /* Private */,
+       8,    0,   68,    2, 0x0a,    7 /* Public */,
+       9,    0,   69,    2, 0x0a,    8 /* Public */,
 
  // signals: parameters
     QMetaType::Void,
     QMetaType::Void,
 
  // slots: parameters
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -108,6 +111,8 @@ Q_CONSTINIT const QMetaObject Selection::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_Exit_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_Ibrahim_Button_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'show_window'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'Lock_Admin_Button'
@@ -126,8 +131,9 @@ void Selection::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         case 2: _t->on_Admin_Button_clicked(); break;
         case 3: _t->on_User_Button_clicked(); break;
         case 4: _t->on_Exit_clicked(); break;
-        case 5: _t->show_window(); break;
-        case 6: _t->Lock_Admin_Button(); break;
+        case 5: _t->on_Ibrahim_Button_clicked(); break;
+        case 6: _t->show_window(); break;
+        case 7: _t->Lock_Admin_Button(); break;
         default: ;
         }
     }
@@ -169,14 +175,14 @@ int Selection::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 7)
+        if (_id < 8)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 7;
+        _id -= 8;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 7)
+        if (_id < 8)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 7;
+        _id -= 8;
     }
     return _id;
 }

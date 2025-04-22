@@ -25,6 +25,10 @@ private slots:
 
     void on_Exit_clicked();
 
+    void on_Ibrahim_Button_clicked();
+
+    void on_Azan_Button_clicked();
+
 public slots:
     void show_window();
 

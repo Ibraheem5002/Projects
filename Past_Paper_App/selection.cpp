@@ -4,6 +4,9 @@
 #include "user_screen.h"
 #include "authentication.h"
 
+#include <QDesktopServices>
+#include <QUrl>
+
 bool Lock_Ad_Button = 0;
 
 Selection::Selection(QWidget *parent)
@@ -49,3 +52,17 @@ void Selection::Lock_Admin_Button()
 {
     Lock_Ad_Button = 1;
 }
+
+void Selection::on_Ibrahim_Button_clicked()
+{
+    QUrl url("https://github.com/Ibraheem5002");
+    QDesktopServices::openUrl(url);
+}
+
+
+void Selection::on_Azan_Button_clicked()
+{
+    QUrl url("https://github.com/");
+    QDesktopServices::openUrl(url);
+}
+
