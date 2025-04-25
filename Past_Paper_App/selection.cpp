@@ -29,19 +29,16 @@ void Selection::on_Admin_Button_clicked()
     }
 }
 
-
 void Selection::on_User_Button_clicked()
 {
     emit User_Button_Is_Clicked();
     close();
 }
 
-
 void Selection::show_window()
 {
     show();
 }
-
 
 void Selection::on_Exit_clicked()
 {
@@ -59,10 +56,8 @@ void Selection::on_Ibrahim_Button_clicked()
     QDesktopServices::openUrl(url);
 }
 
-
 void Selection::on_Azan_Button_clicked()
 {
     QUrl url("https://github.com/");
     QDesktopServices::openUrl(url);
 }
-
