@@ -6,7 +6,7 @@
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../../../Projects/Past Paper App/user_screen.h"
+#include "../../../user_screen.h"
 #include <QtCore/qmetatype.h>
 
 #include <QtCore/qtmochelpers.h>

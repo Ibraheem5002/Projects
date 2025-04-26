@@ -58,6 +58,6 @@ void Selection::on_Ibrahim_Button_clicked()
 
 void Selection::on_Azan_Button_clicked()
 {
-    QUrl url("https://github.com/");
+    QUrl url("https://github.com/azan6155");
     QDesktopServices::openUrl(url);
 }

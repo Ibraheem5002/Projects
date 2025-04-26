@@ -20,6 +20,7 @@ void Authentication::show_window()
 {
     show();
     ui->lineEdit->clear();
+    ui->lineEdit->setEchoMode(QLineEdit::Password);
     Incorrect_Num = 0;
 }
 
@@ -82,3 +83,16 @@ void Authentication::on_Ok_Button_clicked()
         }
     }
 }
+
+void Authentication::on_Eye_Button_toggled(bool showPassword)
+{
+    if (showPassword == 0)
+    {
+        ui->lineEdit->setEchoMode(QLineEdit::Password);
+    }
+    else
+    {
+        ui->lineEdit->setEchoMode(QLineEdit::Normal);
+    }
+}
+

@@ -38,6 +38,14 @@ public:
     QPushButton *User_Button;
     QSpacerItem *horizontalSpacer_3;
     QPushButton *Admin_Button;
+    QSpacerItem *verticalSpacer_4;
+    QHBoxLayout *horizontalLayout_3;
+    QSpacerItem *horizontalSpacer_7;
+    QPushButton *pushButton;
+    QPushButton *Azan_Button;
+    QPushButton *pushButton_3;
+    QPushButton *Ibrahim_Button;
+    QSpacerItem *horizontalSpacer_8;
     QSpacerItem *verticalSpacer_2;
     QHBoxLayout *horizontalLayout_2;
     QSpacerItem *horizontalSpacer_4;
@@ -172,7 +180,92 @@ public:
 
         verticalLayout->addLayout(gridLayout);
 
-        verticalSpacer_2 = new QSpacerItem(20, 160, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+        verticalSpacer_4 = new QSpacerItem(20, 44, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        verticalLayout->addItem(verticalSpacer_4);
+
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setObjectName("horizontalLayout_3");
+        horizontalSpacer_7 = new QSpacerItem(68, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer_7);
+
+        pushButton = new QPushButton(centralwidget);
+        pushButton->setObjectName("pushButton");
+        pushButton->setMinimumSize(QSize(211, 61));
+        pushButton->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	color:BLACK;\n"
+"	background-color:rgb(220, 220, 220);\n"
+"	border:none;\n"
+"	font: 700 40pt \"Britannic\";\n"
+"}"));
+
+        horizontalLayout_3->addWidget(pushButton);
+
+        Azan_Button = new QPushButton(centralwidget);
+        Azan_Button->setObjectName("Azan_Button");
+        Azan_Button->setMinimumSize(QSize(0, 61));
+        Azan_Button->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	color:BLACK;\n"
+"	background-color:rgb(220, 220, 220);\n"
+"	border:none;\n"
+"	font: 700 40pt \"Britannic\";\n"
+"}\n"
+"\n"
+"QPushButton:hover\n"
+"{\n"
+"	color:WHITE;\n"
+"	background-color:rgb(220, 220, 220);\n"
+"	border:none;\n"
+"	font: 700 40pt \"Britannic\";\n"
+"}"));
+
+        horizontalLayout_3->addWidget(Azan_Button);
+
+        pushButton_3 = new QPushButton(centralwidget);
+        pushButton_3->setObjectName("pushButton_3");
+        pushButton_3->setMinimumSize(QSize(91, 61));
+        pushButton_3->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	color:BLACK;\n"
+"	background-color:rgb(220, 220, 220);\n"
+"	border:none;\n"
+"	font: 700 40pt \"Britannic\";\n"
+"}"));
+
+        horizontalLayout_3->addWidget(pushButton_3);
+
+        Ibrahim_Button = new QPushButton(centralwidget);
+        Ibrahim_Button->setObjectName("Ibrahim_Button");
+        Ibrahim_Button->setMinimumSize(QSize(191, 61));
+        Ibrahim_Button->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	color:BLACK;\n"
+"	background-color:rgb(220, 220, 220);\n"
+"	border:none;\n"
+"	font: 700 40pt \"Britannic\";\n"
+"}\n"
+"\n"
+"QPushButton:hover\n"
+"{\n"
+"	color:WHITE;\n"
+"	background-color:rgb(220, 220, 220);\n"
+"	border:none;\n"
+"	font: 700 40pt \"Britannic\";\n"
+"}"));
+
+        horizontalLayout_3->addWidget(Ibrahim_Button);
+
+        horizontalSpacer_8 = new QSpacerItem(68, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer_8);
+
+
+        verticalLayout->addLayout(horizontalLayout_3);
+
+        verticalSpacer_2 = new QSpacerItem(20, 44, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
 
         verticalLayout->addItem(verticalSpacer_2);
 
@@ -227,6 +320,10 @@ public:
         Ttile->setText(QCoreApplication::translate("Selection", "Past Paper App", nullptr));
         User_Button->setText(QCoreApplication::translate("Selection", "User", nullptr));
         Admin_Button->setText(QCoreApplication::translate("Selection", "Admin", nullptr));
+        pushButton->setText(QCoreApplication::translate("Selection", "Made By:", nullptr));
+        Azan_Button->setText(QCoreApplication::translate("Selection", "Azan", nullptr));
+        pushButton_3->setText(QCoreApplication::translate("Selection", "and", nullptr));
+        Ibrahim_Button->setText(QCoreApplication::translate("Selection", "Ibrahim", nullptr));
         Exit->setText(QCoreApplication::translate("Selection", "Exit", nullptr));
     } // retranslateUi
 

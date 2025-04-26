@@ -24,6 +24,8 @@ private slots:
 
     void on_Ok_Button_clicked();
 
+    void on_Eye_Button_toggled(bool checked);
+
 private:
     Ui::Authentication *ui;
 

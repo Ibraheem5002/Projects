@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
+    <width>437</width>
     <height>171</height>
    </rect>
   </property>
@@ -16,12 +16,56 @@
   <property name="styleSheet">
    <string notr="true">background-color:rgb(243, 243, 243);</string>
   </property>
+  <widget class="QPushButton" name="Eye_Button">
+   <property name="geometry">
+    <rect>
+     <x>389</x>
+     <y>41</y>
+     <width>30</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#Eye_Button
+{
+    background-color: rgb(243, 243, 243);
+    border: none;	
+    border-image: url(:/images/images/open_eye.png);
+}
+
+#Eye_Button:checked
+{
+    background-color: rgb(243, 243, 243);
+    border: none;
+    border-image: url(:/images/images/closed_eye.png);
+}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+  </widget>
   <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>0</x>
+     <x>1</x>
      <y>140</y>
-     <width>391</width>
+     <width>431</width>
      <height>26</height>
     </rect>
    </property>
@@ -75,47 +119,47 @@ color:BLACK;</string>
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QLineEdit" name="lineEdit">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>40</y>
-     <width>372</width>
-     <height>33</height>
+     <x>120</x>
+     <y>41</y>
+     <width>262</width>
+     <height>31</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_2">
-    <item>
-     <widget class="QLabel" name="label">
-      <property name="styleSheet">
-       <string notr="true">color:BLACK;
-font:15px;
-</string>
-      </property>
-      <property name="text">
-       <string>Enter Password:</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="lineEdit">
-      <property name="minimumSize">
-       <size>
-        <width>262</width>
-        <height>31</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font:15px;
+   <property name="minimumSize">
+    <size>
+     <width>262</width>
+     <height>31</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font:15px;
 background-color:WHITE;
 color:BLACK;</string>
-      </property>
-      <property name="echoMode">
-       <enum>QLineEdit::EchoMode::Password</enum>
-      </property>
-     </widget>
-    </item>
-   </layout>
+   </property>
+   <property name="echoMode">
+    <enum>QLineEdit::EchoMode::Password</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>12</x>
+     <y>45</y>
+     <width>102</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:BLACK;
+font:15px;
+</string>
+   </property>
+   <property name="text">
+    <string>Enter Password:</string>
+   </property>
   </widget>
  </widget>
  <resources/>

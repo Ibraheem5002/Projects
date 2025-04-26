@@ -123,7 +123,9 @@ compiler_rcc_clean:
 debug/qrc_Resource_File.cpp: ../../Resource_File.qrc \
 		C:/Qt/6.8.2/mingw_64/bin/rcc.exe \
 		../../images/folder.png \
-		../../images/file.png
+		../../images/closed_eye.png \
+		../../images/file.png \
+		../../images/open_eye.png
 	'C:\Qt\6.8.2\mingw_64\bin\rcc.exe' -name Resource_File --no-zstd ../../Resource_File.qrc -o debug/qrc_Resource_File.cpp
 
 compiler_moc_predefs_make_all: debug/moc_predefs.h
@@ -1418,6 +1420,34 @@ debug/authentication.o: ../../authentication.cpp ../../authentication.h \
 		C:/Qt/6.8.2/mingw_64/include/QtCore/qlocale.h \
 		C:/Qt/6.8.2/mingw_64/include/QtGui/qguiapplication_platform.h \
 		ui_authentication.h \
+		C:/Qt/6.8.2/mingw_64/include/QtCore/QVariant \
+		C:/Qt/6.8.2/mingw_64/include/QtWidgets/QApplication \
+		C:/Qt/6.8.2/mingw_64/include/QtWidgets/qapplication.h \
+		C:/Qt/6.8.2/mingw_64/include/QtWidgets/QHBoxLayout \
+		C:/Qt/6.8.2/mingw_64/include/QtWidgets/qboxlayout.h \
+		C:/Qt/6.8.2/mingw_64/include/QtWidgets/qlayout.h \
+		C:/Qt/6.8.2/mingw_64/include/QtWidgets/qlayoutitem.h \
+		C:/Qt/6.8.2/mingw_64/include/QtWidgets/qgridlayout.h \
+		C:/Qt/6.8.2/mingw_64/include/QtWidgets/QLabel \
+		C:/Qt/6.8.2/mingw_64/include/QtWidgets/qlabel.h \
+		C:/Qt/6.8.2/mingw_64/include/QtWidgets/qframe.h \
+		C:/Qt/6.8.2/mingw_64/include/QtGui/qpicture.h \
+		C:/Qt/6.8.2/mingw_64/include/QtGui/qtextdocument.h \
+		C:/Qt/6.8.2/mingw_64/include/QtWidgets/QLineEdit \
+		C:/Qt/6.8.2/mingw_64/include/QtWidgets/qlineedit.h \
+		C:/Qt/6.8.2/mingw_64/include/QtGui/qtextcursor.h \
+		C:/Qt/6.8.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.8.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.8.2/mingw_64/include/QtGui/qtextoption.h \
+		C:/Qt/6.8.2/mingw_64/include/QtWidgets/QPushButton \
+		C:/Qt/6.8.2/mingw_64/include/QtWidgets/qpushbutton.h \
+		C:/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/6.8.2/mingw_64/include/QtWidgets/QSpacerItem \
+		C:/Qt/6.8.2/mingw_64/include/QtWidgets/QWidget \
+		../../selection.h \
+		C:/Qt/6.8.2/mingw_64/include/QtWidgets/QMainWindow \
+		C:/Qt/6.8.2/mingw_64/include/QtWidgets/qmainwindow.h \
+		C:/Qt/6.8.2/mingw_64/include/QtWidgets/qtabwidget.h \
 		C:/Qt/6.8.2/mingw_64/include/QtCore/QFile \
 		C:/Qt/6.8.2/mingw_64/include/QtCore/qfile.h \
 		C:/Qt/6.8.2/mingw_64/include/QtCore/qfiledevice.h \
@@ -1880,7 +1910,13 @@ debug/selection.o: ../../selection.cpp ../../selection.h \
 		C:/Qt/6.8.2/mingw_64/include/QtWidgets/qabstractslider.h \
 		C:/Qt/6.8.2/mingw_64/include/QtWidgets/qstyle.h \
 		C:/Qt/6.8.2/mingw_64/include/QtWidgets/qtabbar.h \
-		C:/Qt/6.8.2/mingw_64/include/QtWidgets/qrubberband.h
+		C:/Qt/6.8.2/mingw_64/include/QtWidgets/qrubberband.h \
+		../../authentication.h \
+		C:/Qt/6.8.2/mingw_64/include/QtWidgets/QDialog \
+		C:/Qt/6.8.2/mingw_64/include/QtWidgets/qdialog.h \
+		C:/Qt/6.8.2/mingw_64/include/QtGui/QDesktopServices \
+		C:/Qt/6.8.2/mingw_64/include/QtGui/qdesktopservices.h \
+		C:/Qt/6.8.2/mingw_64/include/QtCore/QUrl
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug/selection.o ../../selection.cpp
 
 debug/user_screen.o: ../../user_screen.cpp ../../user_screen.h \

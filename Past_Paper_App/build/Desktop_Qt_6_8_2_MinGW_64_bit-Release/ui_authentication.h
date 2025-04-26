@@ -24,25 +24,44 @@ QT_BEGIN_NAMESPACE
 class Ui_Authentication
 {
 public:
+    QPushButton *Eye_Button;
     QWidget *widget;
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer;
     QPushButton *Ok_Button;
     QPushButton *Cancel_Button;
-    QWidget *widget1;
-    QHBoxLayout *horizontalLayout_2;
-    QLabel *label;
     QLineEdit *lineEdit;
+    QLabel *label;
 
     void setupUi(QDialog *Authentication)
     {
         if (Authentication->objectName().isEmpty())
             Authentication->setObjectName("Authentication");
-        Authentication->resize(400, 171);
+        Authentication->resize(437, 171);
         Authentication->setStyleSheet(QString::fromUtf8("background-color:rgb(243, 243, 243);"));
+        Eye_Button = new QPushButton(Authentication);
+        Eye_Button->setObjectName("Eye_Button");
+        Eye_Button->setGeometry(QRect(389, 41, 30, 30));
+        Eye_Button->setMinimumSize(QSize(30, 30));
+        Eye_Button->setMaximumSize(QSize(30, 30));
+        Eye_Button->setStyleSheet(QString::fromUtf8("#Eye_Button\n"
+"{\n"
+"    background-color: rgb(243, 243, 243);\n"
+"    border: none;	\n"
+"    border-image: url(:/images/images/open_eye.png);\n"
+"}\n"
+"\n"
+"#Eye_Button:checked\n"
+"{\n"
+"    background-color: rgb(243, 243, 243);\n"
+"    border: none;\n"
+"    border-image: url(:/images/images/closed_eye.png);\n"
+"}\n"
+""));
+        Eye_Button->setCheckable(true);
         widget = new QWidget(Authentication);
         widget->setObjectName("widget");
-        widget->setGeometry(QRect(0, 140, 391, 26));
+        widget->setGeometry(QRect(1, 140, 431, 26));
         horizontalLayout = new QHBoxLayout(widget);
         horizontalLayout->setObjectName("horizontalLayout");
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
@@ -66,30 +85,20 @@ public:
 
         horizontalLayout->addWidget(Cancel_Button);
 
-        widget1 = new QWidget(Authentication);
-        widget1->setObjectName("widget1");
-        widget1->setGeometry(QRect(10, 40, 372, 33));
-        horizontalLayout_2 = new QHBoxLayout(widget1);
-        horizontalLayout_2->setObjectName("horizontalLayout_2");
-        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-        label = new QLabel(widget1);
-        label->setObjectName("label");
-        label->setStyleSheet(QString::fromUtf8("color:BLACK;\n"
-"font:15px;\n"
-""));
-
-        horizontalLayout_2->addWidget(label);
-
-        lineEdit = new QLineEdit(widget1);
+        lineEdit = new QLineEdit(Authentication);
         lineEdit->setObjectName("lineEdit");
+        lineEdit->setGeometry(QRect(120, 41, 262, 31));
         lineEdit->setMinimumSize(QSize(262, 31));
         lineEdit->setStyleSheet(QString::fromUtf8("font:15px;\n"
 "background-color:WHITE;\n"
 "color:BLACK;"));
         lineEdit->setEchoMode(QLineEdit::EchoMode::Password);
-
-        horizontalLayout_2->addWidget(lineEdit);
-
+        label = new QLabel(Authentication);
+        label->setObjectName("label");
+        label->setGeometry(QRect(12, 45, 102, 20));
+        label->setStyleSheet(QString::fromUtf8("color:BLACK;\n"
+"font:15px;\n"
+""));
 
         retranslateUi(Authentication);
 
@@ -99,6 +108,7 @@ public:
     void retranslateUi(QDialog *Authentication)
     {
         Authentication->setWindowTitle(QCoreApplication::translate("Authentication", "Admin Authentication", nullptr));
+        Eye_Button->setText(QString());
         Ok_Button->setText(QCoreApplication::translate("Authentication", "Ok", nullptr));
         Cancel_Button->setText(QCoreApplication::translate("Authentication", "Cancel", nullptr));
         label->setText(QCoreApplication::translate("Authentication", "Enter Password:", nullptr));
