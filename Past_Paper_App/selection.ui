@@ -283,58 +283,6 @@ QPushButton:pressed
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="Azan_Button">
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>61</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton
-{
-	color:BLACK;
-	background-color:rgb(220, 220, 220);
-	border:none;
-	font: 700 40pt &quot;Britannic&quot;;
-}
-
-QPushButton:hover
-{
-	color:WHITE;
-	background-color:rgb(220, 220, 220);
-	border:none;
-	font: 700 40pt &quot;Britannic&quot;;
-}</string>
-        </property>
-        <property name="text">
-         <string>Azan</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButton_3">
-        <property name="minimumSize">
-         <size>
-          <width>91</width>
-          <height>61</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton
-{
-	color:BLACK;
-	background-color:rgb(220, 220, 220);
-	border:none;
-	font: 700 40pt &quot;Britannic&quot;;
-}</string>
-        </property>
-        <property name="text">
-         <string>and</string>
-        </property>
-       </widget>
-      </item>
-      <item>
        <widget class="QPushButton" name="Ibrahim_Button">
         <property name="minimumSize">
          <size>
