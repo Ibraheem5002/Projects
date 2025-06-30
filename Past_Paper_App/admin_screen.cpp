@@ -103,11 +103,18 @@ void Admin_Screen::on_New_Subject_clicked()
 
     QString New_Subject = QInputDialog::getText(this, "New Subject", "Enter the name of the new subject:");
 
-    Dir.mkpath(QCoreApplication::applicationDirPath() + "/Past Papers/" + New_Subject);
+    if (New_Subject != nullptr)
+    {
+        Dir.mkpath(QCoreApplication::applicationDirPath() + "/Past Papers/" + New_Subject);
 
-    QString New_Path = QCoreApplication::applicationDirPath() + "/Past Papers/" + New_Subject;
+        QString New_Path = QCoreApplication::applicationDirPath() + "/Past Papers/" + New_Subject;
 
-    ui->Subject_Choosing->addItem(New_Subject, New_Path);
+        ui->Subject_Choosing->addItem(New_Subject, New_Path);
+    }
+    else
+    {
+        QMessageBox::warning(this,"Error","You did not entered a name");
+    }
 }
 
 

@@ -6,8 +6,10 @@
 #include <QDir>
 #include <QMessageBox>
 #include <QTextStream>
+#include <QVector>
 
 int Incorrect_Num;
+bool Is_Password_Correct = 0;
 
 Authentication::Authentication(QWidget *parent)
     : QDialog(parent)
@@ -52,19 +54,33 @@ void Authentication::on_Ok_Button_clicked()
     QString File_Path = Dir.filePath("password.txt");
     QFile File(File_Path);
 
-    QString Password;
+    // QString Password;
 
     if (File.open(QIODevice::ReadOnly | QIODevice::Text))
     {
+        QVector <QString> Inputs;
         QTextStream line(&File);
-        Password = line.readLine();
+
+        while(!line.atEnd())
+        {
+            Inputs.push_back(line.readLine());
+        }
+
+        for (int i = 0; i < Inputs.size(); i++)
+        {
+            if (Entered == Inputs[i])
+            {
+                Is_Password_Correct = 1;
+                break;
+            }
+        }
     }
     else
     {
-        QMessageBox::warning(this,"Error","Failed To Obtain the Password from Database");
+        QMessageBox::warning(this,"Error","Failed To Obtain the Password from the Database");
     }
 
-    if (Password == Entered)
+    if (Is_Password_Correct == 1)
     {
         emit Password_Is_Correct();
         close();
