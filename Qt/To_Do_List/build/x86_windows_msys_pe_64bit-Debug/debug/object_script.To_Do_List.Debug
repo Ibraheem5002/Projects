@@ -1,0 +1,11 @@
+debug/global.o
+debug/main.o
+debug/loginscreen.o
+debug/signin.o
+debug/signup.o
+debug/tasks.o
+debug/qrc_resource.o
+debug/moc_loginscreen.o
+debug/moc_signin.o
+debug/moc_signup.o
+debug/moc_tasks.o

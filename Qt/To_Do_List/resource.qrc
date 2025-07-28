@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>images/closed_eye.png</file>
+        <file>images/open_eye.png</file>
+    </qresource>
+</RCC>

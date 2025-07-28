@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Tasks</class>
+ <widget class="QMainWindow" name="Tasks">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Tasks</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+    QMainWindow {
+        background-color: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                                          stop:0 #f0f4f8, stop:1 #dbeafe);
+    }
+   </string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="minimumSize">
+         <size>
+          <width>200</width>
+          <height>91</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+            font: bold 36pt &quot;Segoe UI&quot;;
+            color: #1e3a8a;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 15px;</string>
+        </property>
+        <property name="text">
+         <string>Tasks</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <spacer name="horizontalSpacer_6">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="minimumSize">
+         <size>
+          <width>351</width>
+          <height>51</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: bold 16pt &quot;Segoe UI&quot;;
+color: #1e3a8a;
+background: transparent;
+</string>
+        </property>
+        <property name="text">
+         <string>Welcome, User!</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_7">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QTableWidget" name="Table">
+      <property name="minimumSize">
+       <size>
+        <width>781</width>
+        <height>321</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QHeaderView::section {
+    background-color: #000;
+    color: white;
+    border: none;
+    padding: 6px;
+    font: bold 14pt &quot;Segoe UI&quot;;
+    border-bottom: 2px solid white;
+}
+
+QTableWidget {
+    background-color: rgba(255,255,255,0.9);
+    color: #222;
+    gridline-color: #ccc;
+    font: 14pt &quot;Segoe UI&quot;;
+    border-radius: 8px;
+}
+
+QTableWidget::item:selected {
+    background-color: #eee;
+    color: #000;
+}
+       </string>
+      </property>
+      <property name="rowCount">
+       <number>4</number>
+      </property>
+      <property name="columnCount">
+       <number>2</number>
+      </property>
+      <row/>
+      <row/>
+      <row/>
+      <row/>
+      <column>
+       <property name="text">
+        <string>Task</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Status</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QPushButton" name="Back_Button">
+        <property name="minimumSize">
+         <size>
+          <width>131</width>
+          <height>51</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+              QPushButton {
+                  background-color: #1d4ed8;
+                  color: white;
+                  font: 14pt &quot;Segoe UI&quot;;
+                  border-radius: 10px;
+                  padding: 10px;
+              }
+              QPushButton:hover {
+                  background-color: #2563eb;
+              }
+              QPushButton:pressed {
+                  background-color: #1e40af;
+              }
+             </string>
+        </property>
+        <property name="text">
+         <string>Back</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="Add_Button">
+        <property name="minimumSize">
+         <size>
+          <width>131</width>
+          <height>51</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+              QPushButton {
+                  background-color: #1d4ed8;
+                  color: white;
+                  font: 14pt &quot;Segoe UI&quot;;
+                  border-radius: 10px;
+                  padding: 10px;
+              }
+              QPushButton:hover {
+                  background-color: #2563eb;
+              }
+              QPushButton:pressed {
+                  background-color: #1e40af;
+              }
+             </string>
+        </property>
+        <property name="text">
+         <string>Add</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_4">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="Delete_Button">
+        <property name="minimumSize">
+         <size>
+          <width>131</width>
+          <height>51</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+              QPushButton {
+                  background-color: #1d4ed8;
+                  color: white;
+                  font: 14pt &quot;Segoe UI&quot;;
+                  border-radius: 10px;
+                  padding: 10px;
+              }
+              QPushButton:hover {
+                  background-color: #2563eb;
+              }
+              QPushButton:pressed {
+                  background-color: #1e40af;
+              }
+             </string>
+        </property>
+        <property name="text">
+         <string>Delete</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_5">
+        <property name="orientation">
+         <enum>Qt::Orientation::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="ChStatus_Button">
+        <property name="minimumSize">
+         <size>
+          <width>131</width>
+          <height>51</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+              QPushButton {
+                  background-color: #1d4ed8;
+                  color: white;
+                  font: 14pt &quot;Segoe UI&quot;;
+                  border-radius: 10px;
+                  padding: 10px;
+              }
+              QPushButton:hover {
+                  background-color: #2563eb;
+              }
+              QPushButton:pressed {
+                  background-color: #1e40af;
+              }
+             </string>
+        </property>
+        <property name="text">
+         <string>Change Status</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

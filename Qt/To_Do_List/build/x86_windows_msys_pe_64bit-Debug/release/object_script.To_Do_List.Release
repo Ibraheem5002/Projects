@@ -1,0 +1,11 @@
+release/global.o
+release/main.o
+release/loginscreen.o
+release/signin.o
+release/signup.o
+release/tasks.o
+release/qrc_resource.o
+release/moc_loginscreen.o
+release/moc_signin.o
+release/moc_signup.o
+release/moc_tasks.o
