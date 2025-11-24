@@ -37,6 +37,9 @@ class mainwindow(QMainWindow):
         self.cumulative_score = []
         self.fig, self.ax = plt.subplots()
         self.line, = self.ax.plot([], [], marker='o')
+        plt.xlabel('Rounds')
+        plt.ylabel('Cumulative Win Rate of Computer')
+        plt.title('AI Performance Overtime')
         plt.ion()
         plt.show()
 
