@@ -222,7 +222,7 @@ class mainwindow(QMainWindow):
         if self.in_op == 'R':
             if self.out_op == 'R':
                 self.Draws += 1
-                self.total_score += 0.5
+                self.total_score += 0
                 self.cumulative_score.append(self.total_score / self.turns)
 
             elif self.out_op == 'P':
@@ -243,7 +243,7 @@ class mainwindow(QMainWindow):
 
             elif self.out_op == 'P':
                 self.Draws += 1
-                self.total_score += 0.5
+                self.total_score += 0
                 self.cumulative_score.append(self.total_score / self.turns)
 
             else:
@@ -264,7 +264,7 @@ class mainwindow(QMainWindow):
 
             else:
                 self.Draws += 1
-                self.total_score += 0.5
+                self.total_score += 0
                 self.cumulative_score.append(self.total_score / self.turns)
 
     # --------- drawing/updaing graph ---------------
