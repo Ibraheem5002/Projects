@@ -153,40 +153,29 @@ class mainwindow(QMainWindow):
         self.check_ans()
 
     def add_pattern(self,key,Z):
-        key1 = ''.join(key)
-
-        if key1 in self.patterns:
-            self.patterns[key1].append(Z)
+        if key in self.patterns:
+            self.patterns[key].append(Z)
         else:
-            self.patterns[key1] = [Z]
+            self.patterns[key] = [Z]
 
     def update_pattern(self):
-        N = len(self.in_history)
-
-        for i in range(N-1):
-            for length in range(1,N - i + 1):
-                key = ''.join(self.in_history[i: i + length])
-                if i + length < N:
-                    Z = self.in_history[i + length]
-                    self.add_pattern(key,Z)
+        for L in range(5,0,-1):
+            if (len(self.in_history) > L):
+                key = ""
+                for i in range(-(L+1),-1):
+                    key += self.in_history[i]
+                    
+                Z = self.in_history[-1]
+                self.add_pattern(key,Z)
 
     def cal_probability(self,key):
         lst = self.patterns[key]
         total = len(lst)
 
-        self.probability[0] = lst.count('R') / total
-        self.probability[1] = lst.count('P') / total
-        self.probability[2] = lst.count('S') / total
-
-    def check_pattern(self):
-        key = ''.join(self.in_history)
-
-        while key != "":
-            if key in self.patterns:
-                return key
-            else:
-                key = key[1:]
-        return None
+        if total != 0:
+            self.probability[0] = lst.count('R') / total
+            self.probability[1] = lst.count('P') / total
+            self.probability[2] = lst.count('S') / total
 
     def choose_ans(self):
         sorted_probs = sorted(self.probability, reverse=True)
@@ -200,16 +189,19 @@ class mainwindow(QMainWindow):
             return ['R', 'P', 'S'][max_index]
 
     def pridict_ans(self):
-        if len(self.in_history) < 2:
-            return random.choice(['R','P','S'])
+        for L in range(5,0,-1):
+            if len(self.in_history) < L+1:
+                continue
 
-        key = self.check_pattern()
+            key = ""
+            for i in range(-(L+1),-1):
+                key += self.in_history[i]
+            
+            if key in self.patterns:
+                self.cal_probability(key)
 
-        if key != None:
-            self.cal_probability(key)
-            return self.choose_ans()
-        else:
-            return random.choice(['R','P','S'])
+                return self.choose_ans()
+        return random.choice(['R','P','S'])
 
     def return_ans(self):
         op = self.pridict_ans()
@@ -219,53 +211,22 @@ class mainwindow(QMainWindow):
         else: self.out_op = 'R'
 
     def check_ans(self):
-        if self.in_op == 'R':
-            if self.out_op == 'R':
-                self.Draws += 1
-                self.total_score += 0
-                self.cumulative_score.append(self.total_score / self.turns)
+        wrong = {'R':'S', 'P':'R', 'S':'P'}
+        draw = {'R':'R', 'P':'P', 'S':'S'}
 
-            elif self.out_op == 'P':
-                self.C_Wins += 1
-                self.total_score += 1
-                self.cumulative_score.append(self.total_score / self.turns)
-
-            else:
-                self.P_Wins += 1
-                self.total_score += 0
-                self.cumulative_score.append(self.total_score / self.turns)
-
-        elif self.in_op == 'P':
-            if self.out_op == 'R':
-                self.P_Wins += 1
-                self.total_score += 0
-                self.cumulative_score.append(self.total_score / self.turns)
-
-            elif self.out_op == 'P':
-                self.Draws += 1
-                self.total_score += 0
-                self.cumulative_score.append(self.total_score / self.turns)
-
-            else:
-                self.C_Wins += 1
-                self.total_score += 1
-                self.cumulative_score.append(self.total_score / self.turns)
-
+        if wrong[self.in_op] == self.out_op:
+            self.P_Wins += 1
+            self.total_score += 0
+        
+        elif draw[self.in_op] == self.out_op:
+            self.Draws += 1
+            self.total_score += 0
+        
         else:
-            if self.out_op == 'R':
-                self.C_Wins += 1
-                self.total_score += 1
-                self.cumulative_score.append(self.total_score / self.turns)
-
-            elif self.out_op == 'P':
-                self.P_Wins += 1
-                self.total_score += 0
-                self.cumulative_score.append(self.total_score / self.turns)
-
-            else:
-                self.Draws += 1
-                self.total_score += 0
-                self.cumulative_score.append(self.total_score / self.turns)
+            self.C_Wins += 1
+            self.total_score += 1
+        
+        self.cumulative_score.append(self.total_score / self.turns)
 
     # --------- drawing/updaing graph ---------------
 
@@ -293,12 +254,3 @@ if __name__ == "__main__":
     MW = mainwindow()
     MW.show()
     sys.exit(app.exec())
-
-
-
-
-
-
-
-
-
