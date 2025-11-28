@@ -35,6 +35,8 @@ class mainwindow(QMainWindow):
         self.turns_lst = []
         self.total_score = 0
         self.cumulative_score = []
+
+        # graph setup
         self.fig, self.ax = plt.subplots()
         self.line, = self.ax.plot([], [], marker='o')
         plt.xlabel('Rounds')
@@ -43,12 +45,12 @@ class mainwindow(QMainWindow):
         plt.ion()
         plt.show()
 
+        # connecting the button clicks
         self.ui.rock_Button.clicked.connect(self.rock_Button_clicked)
         self.ui.paper_Button.clicked.connect(self.paper_Button_clicked)
         self.ui.scissors_Button.clicked.connect(self.scissors_Button_clicked)
 
         # setting up the initial ui
-
         self.ui.rock_Button_2.hide()
         self.ui.paper_Button_2.hide()
         self.ui.scissors_Button_2.hide()
@@ -65,7 +67,6 @@ class mainwindow(QMainWindow):
             self.is_Next_turn = False
             self.is_Button_Pressed = True
             self.in_op = 'R'
-            self.in_history.append(self.in_op)
 
             self.ui.paper_Button.hide()
             self.ui.scissors_Button.hide()
@@ -80,7 +81,6 @@ class mainwindow(QMainWindow):
             self.is_Next_turn = False
             self.is_Button_Pressed = True
             self.in_op = 'P'
-            self.in_history.append(self.in_op)
 
             self.ui.scissors_Button.hide()
             self.ui.rock_Button.hide()
@@ -95,7 +95,6 @@ class mainwindow(QMainWindow):
             self.is_Next_turn = False
             self.is_Button_Pressed = True
             self.in_op = 'S'
-            self.in_history.append(self.in_op)
 
             self.ui.paper_Button.hide()
             self.ui.rock_Button.hide()
@@ -103,7 +102,6 @@ class mainwindow(QMainWindow):
             self.turns += 1
             self.turns_lst.append(self.turns)
             self.main_program()
-
 
     # ------------ setting/resetting ui ---------
 
@@ -148,9 +146,10 @@ class mainwindow(QMainWindow):
     # -------------- main processing ------------
 
     def all_func(self):
-        self.update_pattern()
         self.return_ans()
         self.check_ans()
+        self.update_pattern()
+        
 
     def add_pattern(self,key,Z):
         if key in self.patterns:
@@ -159,12 +158,11 @@ class mainwindow(QMainWindow):
             self.patterns[key] = [Z]
 
     def update_pattern(self):
-        for L in range(5,0,-1):
-            if (len(self.in_history) > L):
-                key = ""
-                for i in range(-(L+1),-1):
-                    key += self.in_history[i]
-                    
+        self.in_history.append(self.in_op)
+        for L in range(1,6):
+            key = ""
+            if len(self.in_history) > L:
+                key = "".join(self.in_history[-(L+1):-1])
                 Z = self.in_history[-1]
                 self.add_pattern(key,Z)
 
@@ -176,6 +174,8 @@ class mainwindow(QMainWindow):
             self.probability[0] = lst.count('R') / total
             self.probability[1] = lst.count('P') / total
             self.probability[2] = lst.count('S') / total
+        else:
+            self.probability = [1/3,1/3,1/3]
 
     def choose_ans(self):
         sorted_probs = sorted(self.probability, reverse=True)
@@ -189,17 +189,16 @@ class mainwindow(QMainWindow):
             return ['R', 'P', 'S'][max_index]
 
     def pridict_ans(self):
+        self.probability = [1/3,1/3,1/3]
+
         for L in range(5,0,-1):
-            if len(self.in_history) < L+1:
+            if len(self.in_history) < L:
                 continue
 
-            key = ""
-            for i in range(-(L+1),-1):
-                key += self.in_history[i]
+            key = "".join(self.in_history[-L:])
             
             if key in self.patterns:
                 self.cal_probability(key)
-
                 return self.choose_ans()
         return random.choice(['R','P','S'])
 
