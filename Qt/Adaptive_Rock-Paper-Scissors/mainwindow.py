@@ -159,7 +159,7 @@ class mainwindow(QMainWindow):
 
     def update_pattern(self):
         self.in_history.append(self.in_op)
-        for L in range(1,6):
+        for L in range(1,7):
             key = ""
             if len(self.in_history) > L:
                 key = "".join(self.in_history[-(L+1):-1])
@@ -190,8 +190,10 @@ class mainwindow(QMainWindow):
 
     def pridict_ans(self):
         self.probability = [1/3,1/3,1/3]
+        probs = []
+        pLen = []
 
-        for L in range(5,0,-1):
+        for L in range(6,0,-1):
             if len(self.in_history) < L:
                 continue
 
@@ -199,8 +201,23 @@ class mainwindow(QMainWindow):
             
             if key in self.patterns:
                 self.cal_probability(key)
-                return self.choose_ans()
-        return random.choice(['R','P','S'])
+                probs.append(self.probability.copy())
+                pLen.append(len(self.patterns[key]))
+        
+        if len(probs) == 0:
+            return random.choice(['R','P','S'])
+        else:
+            mx = idx = -10000
+            for i in range(len(probs)):
+                pMx = max(probs[i])
+                score = pMx * pLen[i]
+
+                if score > mx:
+                    mx = score
+                    idx = i
+            
+            self.probability = probs[idx]
+            return self.choose_ans()
 
     def return_ans(self):
         op = self.pridict_ans()
