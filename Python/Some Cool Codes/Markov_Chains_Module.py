@@ -23,9 +23,9 @@ class MarkovChains:
 
         self.in_hist = []
         self.patterns = {}
-        self.probability = np.full(self.N,1/self.N)
         self.ops = data
         self.N = len(self.ops)
+        self.probability = np.full(self.N,1/self.N)
         self.in_op = None
         self.out_op = None
         self.Level = lvl
