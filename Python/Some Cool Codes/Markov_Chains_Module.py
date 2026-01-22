@@ -18,14 +18,13 @@ class MarkovChains:
         lvl : int (optional)
             Maximum pattern length to track (n-gram order)
             Default value = 6
-        -----------
         """
 
         self.in_hist = []
         self.patterns = {}
-        self.probability = np.full(self.N,1/self.N)
         self.ops = data
         self.N = len(self.ops)
+        self.probability = np.full(self.N,1/self.N)
         self.in_op = None
         self.out_op = None
         self.Level = lvl
@@ -130,6 +129,24 @@ class MarkovChains:
         self._predict_ans()
         self._update_pattern()
         return self.out_op
+    
+    def fit(self,lst:list):
+        """
+        Reset and fit new sequence of observed data
+        All elements must be of given outcomes
+
+        Parameters:
+        -----------
+        lst : List
+            List of all observed input values
+        """
+
+        for i in range(len(lst)):
+            if lst[i] not in self.ops:
+                raise ValueError(f"Input {lst[i]} is not in valid operations: {self.ops}")
+
+        self.reset()
+        self.in_hist = lst
     
     def reset(self):
         """Reset the model to initial state"""
