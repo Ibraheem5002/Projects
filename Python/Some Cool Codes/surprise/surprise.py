@@ -7,6 +7,8 @@ import time
 import webbrowser
 
 pyautogui.FAILSAFE = True
+screen_w, screen_h = pyautogui.size()
+pyautogui.FAILSAFE_POINTS = [(screen_w-1,screen_h-1)]
 
 def setup():
     if getattr(sys, 'frozen', False):
@@ -32,7 +34,7 @@ def setup():
         except Exception as e:
             print(f"Failed to setup auto-start: {e}")
 
-def ghost():
+def ghost(margin=100):
     print("Ghosting activated")
 
     while True:
@@ -40,7 +42,17 @@ def ghost():
         off_x = random.randint(-100,100)
         off_y = random.randint(-100,100)
 
-        pyautogui.moveTo(curr_x + off_x, curr_y + off_y,duration=0)
+        if (curr_x + off_x) >= (screen_w - margin):
+            off_x = -abs(off_x)
+        
+        if (curr_y + off_y) >= (screen_h - margin):
+            off_y = -abs(off_y)
+
+        new_x = max(0, min(screen_w - 1, curr_x + off_x))
+        new_y = max(0, min(screen_h - 1, curr_y + off_y))
+        
+        pyautogui.moveTo(new_x,new_y,duration=0)
+
         webbrowser.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
 
 if __name__ == "__main__":
